@@ -1,0 +1,34 @@
+{
+    "$schema": "https://apify.com/schemas/v1/input.ide.json",
+    "title": "Adult Video Recommendation Actor",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+        "start_urls": {
+            "title": "Start URLs",
+            "type": "array",
+            "description": "Public listing pages containing adult-only video cards. Use only sites you are allowed to access.",
+            "prefill": [
+                {
+                    "url": "https://apify.com"
+                }
+            ],
+            "editor": "requestListSources"
+        },
+        "top_n": {
+            "title": "Top N recommendations",
+            "type": "integer",
+            "description": "Maximum number of adult recommendations to return, ranked by rating and logarithmic view engagement.",
+            "default": 10,
+            "minimum": 1
+        },
+        "max_pages": {
+            "title": "Max pages to crawl",
+            "type": "integer",
+            "description": "Maximum number of public listing pages to crawl, including the starting pages.",
+            "default": 5,
+            "minimum": 1
+        }
+    },
+    "required": ["start_urls"]
+}
